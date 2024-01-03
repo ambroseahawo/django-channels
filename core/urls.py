@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from notification import views
+from django.conf import settings
+from django.conf.urls.static import static
 from notification.consumers import NotificationConsumer
 
 urlpatterns = [
@@ -27,3 +29,6 @@ urlpatterns = [
 websocket_urlpatterns = [
     path("ws/notifications/", NotificationConsumer.as_asgi())
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
