@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 channels = "*"
+uvicorn = {extras = ["standard"], version = "*"}
 
 [dev-packages]
 
