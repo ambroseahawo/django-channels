@@ -8,6 +8,7 @@ django = "*"
 channels = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 channels-redis = "*"
+celery = "*"
 
 [dev-packages]
 
